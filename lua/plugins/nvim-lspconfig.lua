@@ -56,6 +56,24 @@ return {
           })
         end
 
+        -- Diagnostics configuration
+        vim.diagnostic.config {
+          virtual_text = false, -- Disable inline diagnostics
+          signs = true,
+          float = {
+            source = 'always', -- Show the source of the diagnostic (e.g., linter name)
+            border = 'rounded',
+          },
+        }
+
+        -- Show diagnostics automatically in a floating window when idle
+        vim.api.nvim_create_autocmd('CursorHold', {
+          buffer = event.buf,
+          callback = function()
+            vim.diagnostic.open_float(nil, { focusable = false })
+          end,
+        })
+
         -- The following code creates a keymap to toggle inlay hints in your
         -- code, if the language server you are using supports them
         --
