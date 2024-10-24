@@ -194,7 +194,7 @@ return {
         port = '${port}',
         executable = {
           command = 'node',
-          args = { '/Users/andrewvenson/code/js-debug/src/dapDebugServer.js', '${port}' },
+          args = { '/Users/andrewvenson/projects/js-debug/src/dapDebugServer.js', '${port}' },
         },
       }
     end

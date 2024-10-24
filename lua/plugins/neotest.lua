@@ -11,7 +11,7 @@ return {
     table.insert(
       opts.adapters,
       require 'neotest-jest' {
-        jestCommand = 'yarn test',
+        jestCommand = 'npm run test',
         env = { CI = true },
         cwd = function()
           return vim.fn.getcwd()
