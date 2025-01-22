@@ -31,4 +31,6 @@ vim.opt.background = 'dark'
 vim.opt.scrolloff = 10
 vim.g.have_nerd_font = true
 vim.opt.rtp:prepend(lazypath)
+-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
 require 'sets.db'

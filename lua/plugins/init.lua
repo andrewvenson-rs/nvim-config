@@ -20,4 +20,5 @@ return {
   require 'plugins.copilot',
   require 'plugins.debug',
   require 'plugins.neotest',
+  require 'plugins.avante',
 }
