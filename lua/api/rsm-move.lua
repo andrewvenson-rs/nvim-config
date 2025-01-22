@@ -59,7 +59,7 @@ vim.api.nvim_create_user_command('Manager', function()
 end, {})
 
 vim.api.nvim_create_user_command('Scripts', function()
-  vim.cmd('cd ' .. projects .. '/scripts')
+  vim.cmd('cd ' .. home .. '/scripts')
 end, {})
 
 vim.api.nvim_create_user_command('Orders', function()
@@ -80,4 +80,12 @@ end, {})
 vim.api.nvim_create_user_command('Zs', function()
   vim.cmd('cd ' .. home)
   vim.cmd 'edit .zshrc'
+end, {})
+
+vim.api.nvim_create_user_command('Note', function()
+  local current_date = os.date '%Y-%m-%d'
+  local file = current_date .. '.txt'
+  vim.cmd('cd ' .. home .. '/notes')
+  os.execute('touch ' .. file)
+  vim.cmd('edit ' .. file)
 end, {})
