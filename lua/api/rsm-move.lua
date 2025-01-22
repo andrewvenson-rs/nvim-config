@@ -89,3 +89,15 @@ vim.api.nvim_create_user_command('Note', function()
   os.execute('touch ' .. file)
   vim.cmd('edit ' .. file)
 end, {})
+
+-- vim.api.nvim_create_user_command('Aws', function(opts)
+--   local args = vim.split(opts.args, ' ')
+--   local env = args[1]
+--   local accessCode = args[2]
+--
+--   if env == '' or accessCode == '' then
+--     print 'Must provide a env'
+--     return
+--   end
+--   os.execute('. set-creds ' .. env .. ' ' .. accessCode)
+-- end, { nargs = '*' })
