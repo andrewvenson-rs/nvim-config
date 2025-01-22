@@ -34,7 +34,7 @@ vim.api.nvim_create_user_command('Billing', function()
 end, {})
 
 vim.api.nvim_create_user_command('Graphs', function()
-  vim.cmd('cd ' .. domains .. '/graphs-ts')
+  vim.cmd('cd ' .. domains .. '/graphs')
   vim.cmd 'edit package.json'
 end, {})
 
@@ -44,7 +44,7 @@ vim.api.nvim_create_user_command('Adopt', function()
 end, {})
 
 vim.api.nvim_create_user_command('Subs', function()
-  vim.cmd('cd ' .. domains .. '/subgraphs-ts')
+  vim.cmd('cd ' .. domains .. '/subgraphs')
   vim.cmd 'edit package.json'
 end, {})
 
