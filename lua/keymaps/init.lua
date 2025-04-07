@@ -10,3 +10,20 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>p', ':DBUIToggle<CR>', { desc = 'Toggle dbui drawer' })
 vim.keymap.set('n', '<leader>qt', prettier.pretty, { desc = 'Runs prettier on code project' })
 vim.keymap.set('n', '<leader>o', jesty.jest, { desc = 'Copies one off jest file for testing' })
+
+function OpenGitHub()
+  local file = vim.fn.expand '%' -- Get current file path
+  local line = vim.fn.line '.' -- Get current line number
+  local remote = vim.fn.system('git config --get remote.origin.url'):gsub('\n', '')
+  local branch = vim.fn.system('git rev-parse --abbrev-ref HEAD'):gsub('\n', '')
+
+  if remote:find 'github.com' then
+    remote = remote:gsub('git@github.com:', 'https://github.com/'):gsub('%.git$', '')
+    local url = string.format('%s/blob/%s/%s#L%d', remote, branch, file, line)
+    vim.fn.system(string.format("open '%s'", url)) -- MacOS: open, Linux: xdg-open
+  else
+    print 'Not a GitHub repository!'
+  end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>gh', ':lua OpenGitHub()<CR>', { noremap = true, silent = true })

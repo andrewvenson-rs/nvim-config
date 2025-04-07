@@ -48,6 +48,31 @@ vim.api.nvim_create_user_command('Subs', function()
   vim.cmd 'edit package.json'
 end, {})
 
+vim.api.nvim_create_user_command('Dp', function()
+  vim.cmd('cd ' .. domains .. '/delivery-provider-ts')
+  vim.cmd 'edit package.json'
+end, {})
+
+vim.api.nvim_create_user_command('Up', function()
+  vim.cmd('cd ' .. domains .. '/university-provider-ts')
+  vim.cmd 'edit package.json'
+end, {})
+
+vim.api.nvim_create_user_command('Ip', function()
+  vim.cmd('cd ' .. domains .. '/identity-provider-ts')
+  vim.cmd 'edit package.json'
+end, {})
+
+vim.api.nvim_create_user_command('Pbp', function()
+  vim.cmd('cd ' .. domains .. '/publisher-provider-ts')
+  vim.cmd 'edit package.json'
+end, {})
+
+vim.api.nvim_create_user_command('Di', function()
+  vim.cmd('cd ' .. domains .. '/data-ingestion')
+  vim.cmd 'edit package.json'
+end, {})
+
 vim.api.nvim_create_user_command('Shelf', function()
   vim.cmd('cd ' .. projects .. '/shelf-app')
   vim.cmd 'edit package.json'
@@ -70,6 +95,11 @@ end, {})
 vim.api.nvim_create_user_command('Config', function()
   vim.cmd('cd ' .. config)
   vim.cmd 'edit init.lua'
+end, {})
+
+vim.api.nvim_create_user_command('Dad', function()
+  vim.cmd('cd ' .. home .. '/.local/share/nvim/lazy/vim-dadbod-ui/autoload')
+  vim.cmd 'edit db_ui.vim'
 end, {})
 
 vim.api.nvim_create_user_command('Tm', function()
